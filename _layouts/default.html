@@ -20,6 +20,9 @@
         {% for section in site.content %}
           <div class="container {{ section.layout }}-container">
             <h3 id="{{ section.title | slugify }}">{{ section.title }}</h3>
+            {%- if section.intro -%}
+              <div class="section-intro">{{ section.intro | strip | markdownify }}</div>
+            {%- endif -%}
             {% include {{ section.layout | prepend: "section-" | append: ".html" }} content=section.content %}
           </div>
         {% endfor %}

@@ -1,0 +1,18 @@
+<div class="cards">
+{% for item in include.content %}
+  <article class="card" id="{{ item.title | slugify }}">
+    {%- if item.tagline -%}<div class="card-tagline">{{ item.tagline }}</div>{%- endif -%}
+    <h4>{{ item.title }}</h4>
+    <div class="card-body">
+      {{ item.description | strip | markdownify }}
+    </div>
+    {%- if item.links -%}
+    <div class="card-links">
+      {%- for link in item.links -%}
+        {% include a.html href=link.url class="tag" %}{% if link.icon %}<i class="{{ link.icon }}"></i> {% endif %}{{ link.title | escape }}</a>
+      {%- endfor -%}
+    </div>
+    {%- endif -%}
+  </article>
+{% endfor %}
+</div>

@@ -74,6 +74,40 @@ content:
       - title: Project 2
         description: >
           Description about the work on/with the project
+  - title: Research Topics
+    layout: cards
+    intro: >
+      A short introduction to the section, with *markdown* support.
+    content:
+      - title: Topic 1
+        tagline: Tagline
+        description: >
+          Description of the first topic with a [link](https://sproogen.github.io/modern-resume-theme).
+        links:
+          - title: Code
+            icon: fab fa-github
+            url: sproogen.github.io/modern-resume-theme
+          - title: Project
+            url: https://sproogen.github.io/modern-resume-theme
+      - title: Topic 2
+        description: >
+          Description of the second topic without links.
+  - title: Talks
+    layout: rows
+    content:
+      - label: Jul 2026
+        what: "Title of the talk: with a colon"
+        where: Venue, Location
+        where_url: https://sproogen.github.io/modern-resume-theme
+        links:
+          - title: Slides
+            url: https://sproogen.github.io/modern-resume-theme
+        note: invited
+      - label: Program committees
+        description: |
+          **Conference A** 2026, **Conference B** 2025.
+
+          A second paragraph.
   - title: Experience
     layout: list
     content:

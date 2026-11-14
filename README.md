@@ -100,6 +100,58 @@ content:
 
 ***Note:** The description or content areas (fields starting with `| #`) use markdown, this means that you have the ability to format the section in many different ways and add things such as images, code & syntax highlighting and tables. You can find a good [Markdown cheatsheet here](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)*
 
+#### Section layouts
+Besides `list` and `text`, three further section layouts are available. Every section may also carry an optional `intro`, a markdown paragraph shown below the section title.
+
+**cards** shows each item as a box in a two-column grid, which collapses to a single column on small screens. Useful for research topics, projects or products.
+```
+content:
+  - title: Section Name
+    layout: cards
+    intro: | # optional lead-in paragraph below the section title (markdown)
+      One or two sentences introducing the section.
+    content:
+      - title: Card title
+        tagline: Short label shown above the title (optional)
+        description: | # this will include new lines to allow paragraphs
+          What this project is about.
+        links: (optional)
+          - title: Link text
+            icon: Font Awesome icon name (optional)
+            url: Link url
+```
+
+**rows** shows compact entries with a label column next to the text, for example for talks, awards, supervised students or committee work. On small screens the label moves above the text.
+```
+content:
+  - title: Section Name
+    layout: rows
+    content:
+      - label: Left column (eg. a date, a degree or a category)
+        what: Entry text (markdown, single line)
+        where: Venue or affiliation (optional)
+        where_url: Link for the venue text (optional)
+        links: (optional)
+          - title: Slides
+            url: Link url
+        note: Text shown in parentheses after the entry (optional)
+        description: | # longer markdown text shown below the entry (optional)
+          Further details
+```
+
+**bibliography** renders a publication list from a BibTeX file with [jekyll-scholar](https://github.com/inukshuk/jekyll-scholar). Each entry shows the formatted reference, `[Abstract]` and `[BibTeX]` disclosures, and links taken from the BibTeX fields `url`/`urltext`, `url1`/`url1text` up to `url4`/`url4text`. The site has to install the plugin and point it at the theme's entry template:
+```
+plugins:
+  - jekyll/scholar
+scholar:
+  bibliography_template: bib
+```
+```
+content:
+  - title: Publications
+    layout: bibliography
+```
+
 #### Additional links
 If you would like to add more than the predefined social links in the config file, then you can use the `additional_links` field to add as many additional links with urls and font awesome icons as you wish.
 

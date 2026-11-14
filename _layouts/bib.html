@@ -1,0 +1,52 @@
+---
+---
+{% comment %}
+  jekyll-scholar bibliography template: the formatted reference followed by optional
+  [Abstract] and [BibTeX] disclosures and up to five links taken from the BibTeX fields
+  `url`/`urltext`, `url1`/`url1text`, ... `url4`/`url4text`.
+{% endcomment %}
+<div id="{{ key }}" class="bib-entry">
+  <p>{{ reference }}</p>
+
+  <div id="{{ key }}-materials">
+    {% if entry.abstract %}
+    <div class="inline-block-child">
+      <details>
+        <summary>[<span class="link-like">Abstract</span>]</summary>
+        <p id="{{ key }}-abstract">{{ entry.abstract }}</p>
+      </details>
+    </div>
+    {% endif %}
+    <div class="inline-block-child">
+      <details>
+        <summary>[<span class="link-like">BibTeX</span>]</summary>
+        <pre id="{{ key }}-bibtex" class="pre pre-scrollable">{{ entry.bibtex }}</pre>
+      </details>
+    </div>
+    {% if entry.url %}
+    <div class="inline-block-child">
+      [<a href="{{ entry.url }}">{{ entry.urltext | default: "Link" }}</a>]
+    </div>
+    {% endif %}
+    {% if entry.url1 %}
+    <div class="inline-block-child">
+      [<a href="{{ entry.url1 }}">{{ entry.url1text | default: "Link" }}</a>]
+    </div>
+    {% endif %}
+    {% if entry.url2 %}
+    <div class="inline-block-child">
+      [<a href="{{ entry.url2 }}">{{ entry.url2text | default: "Link" }}</a>]
+    </div>
+    {% endif %}
+    {% if entry.url3 %}
+    <div class="inline-block-child">
+      [<a href="{{ entry.url3 }}">{{ entry.url3text | default: "Link" }}</a>]
+    </div>
+    {% endif %}
+    {% if entry.url4 %}
+    <div class="inline-block-child">
+      [<a href="{{ entry.url4 }}">{{ entry.url4text | default: "Link" }}</a>]
+    </div>
+    {% endif %}
+  </div>
+</div>

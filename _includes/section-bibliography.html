@@ -1,0 +1,10 @@
+{% comment %}
+  Renders a publication list with jekyll-scholar (https://github.com/inukshuk/jekyll-scholar).
+  The site must add `jekyll/scholar` to its plugins and set `scholar.bibliography_template: bib`
+  so that entries are rendered with _layouts/bib.html.
+{% endcomment %}
+<div class="row clearfix">
+  <div class="col-md-12">
+    {% bibliography %}
+  </div>
+</div>

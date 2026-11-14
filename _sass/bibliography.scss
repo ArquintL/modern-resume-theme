@@ -1,0 +1,39 @@
+// `bibliography` section layout (jekyll-scholar) rendered with _layouts/bib.html.
+$bib-link: #477dca !default;
+$bib-link-hover: #355e98 !default;
+
+ol.bibliography {
+  padding-inline-start: 0;
+
+  li {
+    list-style-type: none;
+  }
+}
+
+div.bib-entry {
+  margin-top: 3rem;
+}
+
+div.inline-block-child {
+  font-size: 1.6rem;
+  display: inline-block;
+  vertical-align: top;
+}
+
+span.link-like {
+  color: $bib-link;
+  transition: color 150ms ease;
+
+  &:active,
+  &:focus,
+  &:hover {
+    text-decoration: underline;
+    color: $bib-link-hover;
+  }
+}
+
+// hide the disclosure marker of the [Abstract] / [BibTeX] summaries
+details > summary::marker,
+details > summary::-webkit-details-marker {
+  display: none;
+}

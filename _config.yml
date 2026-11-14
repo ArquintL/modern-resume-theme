@@ -81,6 +81,30 @@ content:
           Short overview of the project (optional)
         description: | # this will include new lines to allow paragraphs
           Description about the work on/with the project
+  - title: Research Topics
+    layout: cards # boxes in a two-column grid (one column on small screens)
+    intro: | # optional lead-in text shown below the section title
+      One or two sentences introducing the section.
+    content:
+      - title: Card title
+        tagline: Short label above the title (optional)
+        description: | # this will include new lines to allow paragraphs
+          Description of the topic or project
+        links:
+          - title: Link text
+            icon: fab fa-github # Font Awesome icon name (optional)
+            url: Link url (eg. sproogen.github.io/modern-resume-theme)
+  - title: Talks
+    layout: rows # compact entries with a label column
+    content:
+      - label: Left column (eg. Jul 2026, MSc, or a category)
+        what: Entry text (eg. the title of the talk)
+        where: Venue, Location (optional)
+        where_url: Link for the venue text (optional)
+        links:
+          - title: Slides
+            url: Link url (optional)
+        note: Shown in parentheses after the entry (optional)
   - title: Experience
     layout: list
     content:

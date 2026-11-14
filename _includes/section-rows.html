@@ -1,0 +1,30 @@
+<ul class="rows">
+{% for item in include.content %}
+  <li>
+    <span class="key">{{ item.label | escape }}</span>
+    <div class="what">
+      {%- if item.what -%}
+        <span class="what-main">{{ item.what | markdownify | remove: '<p>' | remove: '</p>' | strip }}</span>
+      {%- endif -%}
+      {%- if item.where -%}
+        <span class="sep">&middot;</span>
+        {%- if item.where_url -%}
+          <a href="{{ item.where_url }}" target="_blank" class="muted">{{ item.where | escape }}</a>
+        {%- else -%}
+          <span class="muted">{{ item.where | escape }}</span>
+        {%- endif -%}
+      {%- endif -%}
+      {%- for link in item.links -%}
+        <span class="sep">&middot;</span>
+        <span class="rep">[<a href="{{ link.url }}" target="_blank">{{ link.title | escape }}</a>]</span>
+      {%- endfor -%}
+      {%- if item.note -%}
+        <span class="muted note">({{ item.note | escape }})</span>
+      {%- endif -%}
+      {%- if item.description -%}
+        <div class="desc">{{ item.description | strip | markdownify }}</div>
+      {%- endif -%}
+    </div>
+  </li>
+{% endfor %}
+</ul>

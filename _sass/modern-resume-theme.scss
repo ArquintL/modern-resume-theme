@@ -3,6 +3,9 @@
 @import "type";
 @import "dark";
 @import "icons";
+@import "cards";
+@import "rows";
+@import "bibliography";
 
 .header-right p {
   margin-bottom: 3px;
@@ -40,6 +43,14 @@
   -moz-box-shadow: inset 0 0 20px #636161;
   -webkit-box-shadow: inset 0 0 20px #636161;
   box-shadow: inset 0 0 20px #636161;
+}
+
+.section-intro {
+  margin-bottom: 3rem;
+
+  p {
+    text-align: left;
+  }
 }
 
 .list-container {
