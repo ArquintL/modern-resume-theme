@@ -1,4 +1,9 @@
-# modern-resume-theme [![Gem Version](https://badge.fury.io/rb/modern-resume-theme.svg)](https://badge.fury.io/rb/modern-resume-theme) ![CI workflow](https://github.com/sproogen/modern-resume-theme/workflows/CI%20workflow/badge.svg?branch=master)
+# modern-resume-theme (fork) [![CI workflow](https://github.com/ArquintL/modern-resume-theme/actions/workflows/ci-workflow.yml/badge.svg?branch=master)](https://github.com/ArquintL/modern-resume-theme/actions/workflows/ci-workflow.yml)
+
+> **This is a fork** of [sproogen/modern-resume-theme](https://github.com/sproogen/modern-resume-theme) by James Grant, maintained by [Linard Arquint](https://github.com/ArquintL).
+> It adds the **cards**, **rows** and **bibliography** section layouts (see [Section layouts](#section-layouts)) and depends on plain Jekyll instead of the `github-pages` gem, so it also builds with Jekyll 4 in a GitHub Actions workflow.
+> Use it with `remote_theme: ArquintL/modern-resume-theme` in your `_config.yml`.
+> You can see the fork in action at [linardarquint.com](https://www.linardarquint.com) ([source](https://github.com/ArquintL/arquintl.github.io)).
 
 *A modern simple static resume template and theme. Powered by Jekyll and GitHub pages.*  
 *Host your own resume on GitHub for **free!***
@@ -8,6 +13,8 @@
 ----
 
 ## Announcements
+
+ - **Nov 2026** (fork) - New section layouts: **cards** shows items as boxes in a grid (e.g. research projects), **rows** shows compact entries with a label column (talks, awards, supervised students, committee work), and **bibliography** renders a publication list from BibTeX with jekyll-scholar. Every section can also start with an `intro` paragraph. See [Section layouts](#section-layouts).
 
  - **Nov 2020** - Content configuration version 2 released. Added a new more configurable way of adding data to the resume. Add as many content sections as you like in what ever order you want. Currently just *text* and *list* but future categories coming soon.
 Full backwards compatibilty with version 1 remains and the documentation for version 1 can be found [here (Version 1 Readme)](https://github.com/sproogen/modern-resume-theme/blob/1.x/README.md).
@@ -190,7 +197,7 @@ Any changes you make will automatically build and you will be able to see these 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/sproogen/modern-resume-theme. You can view our full guide to contributing [here](https://github.com/sproogen/modern-resume-theme/blob/master/CONTRIBUTING.md)
+For the layouts added in this fork (cards, rows, bibliography), bug reports and pull requests are welcome at https://github.com/ArquintL/modern-resume-theme. For everything else, please contribute upstream: Bug reports and pull requests are welcome on GitHub at https://github.com/sproogen/modern-resume-theme. You can view our full guide to contributing [here](https://github.com/sproogen/modern-resume-theme/blob/master/CONTRIBUTING.md)
 This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ----
