@@ -10,8 +10,13 @@ ol.bibliography {
   }
 }
 
+// entries are separated by a top margin; the first one sits directly below the heading
 div.bib-entry {
   margin-top: 3rem;
+}
+
+ol.bibliography > li:first-child > div.bib-entry {
+  margin-top: 0;
 }
 
 // the formatted reference: same size as body paragraphs
