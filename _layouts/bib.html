@@ -6,7 +6,8 @@
   `url`/`urltext`, `url1`/`url1text`, ... `url4`/`url4text`.
 {% endcomment %}
 <div id="{{ key }}" class="bib-entry">
-  <p>{{ reference }}</p>
+  {% comment %} a div, not a <p>: citeproc-ruby 2 renders CSL display attributes as <div class="csl-left-margin"> / <div class="csl-right-inline"> blocks {% endcomment %}
+  <div class="bib-reference">{{ reference }}</div>
 
   <div id="{{ key }}-materials">
     {% if entry.abstract %}

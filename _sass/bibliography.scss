@@ -14,6 +14,25 @@ div.bib-entry {
   margin-top: 3rem;
 }
 
+// the formatted reference: same size as body paragraphs
+.bib-reference {
+  font-size: 1.6rem;
+  text-align: justify;
+  margin: 0 0 0.75rem;
+
+  // citeproc-ruby 2 wraps parts of an entry in display blocks; keep the entry on one flow
+  .csl-left-margin,
+  .csl-right-inline,
+  .csl-block,
+  .csl-indent {
+    display: inline;
+  }
+
+  br:last-child {
+    display: none;
+  }
+}
+
 div.inline-block-child {
   font-size: 1.6rem;
   display: inline-block;
