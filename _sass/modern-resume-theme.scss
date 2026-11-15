@@ -51,6 +51,50 @@
   p {
     text-align: left;
   }
+
+  // text on the left, image on the right; stacked (image below) on small screens
+  &.section-intro-with-image {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 3rem;
+
+    .section-intro-text {
+      flex: 1 1 0;
+      min-width: 0;
+    }
+
+    .section-intro-image {
+      flex: 0 0 auto;
+      width: 32%;
+      max-width: 360px;
+
+      img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    @media screen and (max-width: 767px) {
+      flex-direction: column;
+      gap: 2rem;
+
+      .section-intro-image {
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+      }
+    }
+
+    @media print {
+      display: block;
+
+      .section-intro-image {
+        display: none;
+      }
+    }
+  }
 }
 
 .list-container {

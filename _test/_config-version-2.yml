@@ -78,6 +78,8 @@ content:
     layout: cards
     intro: >
       A short introduction to the section, with *markdown* support.
+    intro_image: _test/images/landscape-trees.jpg
+    intro_image_alt: Trees
     content:
       - title: Topic 1
         tagline: Tagline

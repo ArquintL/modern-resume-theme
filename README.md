@@ -108,7 +108,7 @@ content:
 ***Note:** The description or content areas (fields starting with `| #`) use markdown, this means that you have the ability to format the section in many different ways and add things such as images, code & syntax highlighting and tables. You can find a good [Markdown cheatsheet here](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)*
 
 #### Section layouts
-Besides `list` and `text`, three further section layouts are available. Every section may also carry an optional `intro`, a markdown paragraph shown below the section title.
+Besides `list` and `text`, three further section layouts are available. Every section may also carry an optional `intro`, a markdown paragraph shown below the section title, and an optional `intro_image` (with `intro_image_alt`), e.g. an SVG, shown to the right of that paragraph and below it on small screens.
 
 **cards** shows each item as a box in a two-column grid, which collapses to a single column on small screens. Useful for research topics, projects or products.
 ```
@@ -117,6 +117,8 @@ content:
     layout: cards
     intro: | # optional lead-in paragraph below the section title (markdown)
       One or two sentences introducing the section.
+    intro_image: images/diagram.svg # optional, shown next to the intro (optional)
+    intro_image_alt: Description of the image
     content:
       - title: Card title
         tagline: Short label shown above the title (optional)

@@ -1,0 +1,15 @@
+{% comment %}
+  Optional lead-in of a content section: `intro` (markdown) and `intro_image` (path to an
+  image, e.g. an SVG) with `intro_image_alt`. The image sits to the right of the text on
+  wide screens and below it on small screens.
+{% endcomment %}
+<div class="section-intro{% if include.section.intro_image %} section-intro-with-image{% endif %}">
+  <div class="section-intro-text">
+    {{ include.section.intro | strip | markdownify }}
+  </div>
+  {%- if include.section.intro_image -%}
+  <div class="section-intro-image">
+    <img src="{{ include.section.intro_image | relative_url }}" alt="{{ include.section.intro_image_alt | default: '' | escape }}">
+  </div>
+  {%- endif -%}
+</div>
