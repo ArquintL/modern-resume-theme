@@ -67,6 +67,11 @@ $rows-muted: #777777 !default;
     }
   }
 
+  // further venues of the same entry, one per line
+  .where-more {
+    display: block;
+  }
+
   .sep {
     color: #aaaaaa;
     margin: 0 0.3rem;

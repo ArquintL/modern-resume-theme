@@ -1,18 +1,23 @@
 <ul class="rows">
 {% for item in include.content %}
+  {%- comment -%} `where` is a string or a list; the first venue stays inline, further ones get their own line {%- endcomment -%}
+  {%- assign where_kind = item.where | jsonify | slice: 0 -%}
+  {%- if where_kind == "[" -%}
+    {%- assign first_where = item.where | first -%}
+    {%- assign more_where = item.where | slice: 1, 100 -%}
+  {%- else -%}
+    {%- assign first_where = item.where -%}
+    {%- assign more_where = "" | split: "," -%}
+  {%- endif -%}
   <li>
     <span class="key">{{ item.label | escape }}</span>
     <div class="what">
       {%- if item.what -%}
         <span class="what-main">{{ item.what | markdownify | remove: '<p>' | remove: '</p>' | strip }}</span>
       {%- endif -%}
-      {%- if item.where -%}
+      {%- if first_where -%}
         <span class="sep">&middot;</span>
-        {%- if item.where_url -%}
-          <a href="{{ item.where_url }}" target="_blank" class="muted">{{ item.where | escape }}</a>
-        {%- else -%}
-          <span class="muted">{{ item.where | escape }}</span>
-        {%- endif -%}
+        {%- include rows-where.html where=first_where where_url=item.where_url -%}
       {%- endif -%}
       {%- for link in item.links -%}
         <span class="sep">&middot;</span>
@@ -21,6 +26,9 @@
       {%- if item.note -%}
         <span class="muted note">({{ item.note | escape }})</span>
       {%- endif -%}
+      {%- for w in more_where -%}
+        <span class="where-more">{%- include rows-where.html where=w -%}</span>
+      {%- endfor -%}
       {%- if item.description -%}
         <div class="desc">{{ item.description | strip | markdownify }}</div>
       {%- endif -%}

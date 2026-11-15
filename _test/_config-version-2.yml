@@ -105,6 +105,12 @@ content:
           - title: Slides
             url: https://sproogen.github.io/modern-resume-theme
         note: invited
+      - label: Jun 2026
+        what: A talk given twice
+        where:
+          - First venue, City
+          - text: Second venue, City
+            url: https://sproogen.github.io/modern-resume-theme
       - label: Program committees
         description: |
           **Conference A** 2026, **Conference B** 2025.

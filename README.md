@@ -138,8 +138,9 @@ content:
     content:
       - label: Left column (eg. a date, a degree or a category)
         what: Entry text (markdown, single line)
-        where: Venue or affiliation (optional)
-        where_url: Link for the venue text (optional)
+        where: Venue or affiliation (optional; a list puts every further venue on its own line,
+               each entry a string or `{text: ..., url: ...}`)
+        where_url: Link for the venue text (optional, for a single `where`)
         links: (optional)
           - title: Slides
             url: Link url
