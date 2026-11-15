@@ -3,7 +3,7 @@
 > **This is a fork** of [sproogen/modern-resume-theme](https://github.com/sproogen/modern-resume-theme) by James Grant, maintained by [Linard Arquint](https://github.com/ArquintL).
 > It adds the **cards**, **rows** and **bibliography** section layouts (see [Section layouts](#section-layouts)) and depends on plain Jekyll instead of the `github-pages` gem, so it also builds with Jekyll 4 in a GitHub Actions workflow.
 > Use it with `remote_theme: ArquintL/modern-resume-theme` in your `_config.yml`.
-> You can see the fork in action at [linardarquint.com](https://www.linardarquint.com) ([source](https://github.com/ArquintL/arquintl.github.io)).
+> You can see the fork in action at [linardarquint.com](https://www.linardarquint.com).
 
 *A modern simple static resume template and theme. Powered by Jekyll and GitHub pages.*  
 *Host your own resume on GitHub for **free!***
