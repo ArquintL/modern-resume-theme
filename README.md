@@ -138,8 +138,7 @@ content:
     content:
       - label: Left column (eg. a date, a degree or a category)
         what: Entry text (markdown, single line)
-        where: # list of venues or affiliations (optional); the first follows the entry text,
-               # every further one gets its own line
+        where: # list of venues or affiliations (optional), each on its own line below the entry text
           - Venue, Location
           - text: Another venue, Location
             url: Link for this venue (optional)

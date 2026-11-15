@@ -67,8 +67,8 @@ $rows-muted: #777777 !default;
     }
   }
 
-  // further venues of the same entry, one per line
-  .where-more {
+  // venues, one per line below the entry text
+  .venue {
     display: block;
   }
 

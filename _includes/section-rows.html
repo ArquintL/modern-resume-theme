@@ -6,13 +6,6 @@
       {%- if item.what -%}
         <span class="what-main">{{ item.what | markdownify | remove: '<p>' | remove: '</p>' | strip }}</span>
       {%- endif -%}
-      {%- comment -%} `where` is a list of venues: the first stays inline, every further one gets its own line {%- endcomment -%}
-      {%- for w in item.where -%}
-        {%- if forloop.first -%}
-          <span class="sep">&middot;</span>
-          {%- include rows-where.html where=w -%}
-        {%- endif -%}
-      {%- endfor -%}
       {%- for link in item.links -%}
         <span class="sep">&middot;</span>
         <span class="rep">[<a href="{{ link.url }}" target="_blank">{{ link.title | escape }}</a>]</span>
@@ -20,10 +13,9 @@
       {%- if item.note -%}
         <span class="muted note">({{ item.note | escape }})</span>
       {%- endif -%}
+      {%- comment -%} every venue on its own line below the entry text {%- endcomment -%}
       {%- for w in item.where -%}
-        {%- unless forloop.first -%}
-          <span class="where-more">{%- include rows-where.html where=w -%}</span>
-        {%- endunless -%}
+        <span class="venue">{%- include rows-where.html where=w -%}</span>
       {%- endfor -%}
       {%- if item.description -%}
         <div class="desc">{{ item.description | strip | markdownify }}</div>
