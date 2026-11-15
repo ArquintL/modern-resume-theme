@@ -99,8 +99,9 @@ content:
     content:
       - label: Jul 2026
         what: "Title of the talk: with a colon"
-        where: Venue, Location
-        where_url: https://sproogen.github.io/modern-resume-theme
+        where:
+          - text: Venue, Location
+            url: https://sproogen.github.io/modern-resume-theme
         links:
           - title: Slides
             url: https://sproogen.github.io/modern-resume-theme

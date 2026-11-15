@@ -1,24 +1,18 @@
 <ul class="rows">
 {% for item in include.content %}
-  {%- comment -%} `where` is a string or a list; the first venue stays inline, further ones get their own line {%- endcomment -%}
-  {%- assign where_kind = item.where | jsonify | slice: 0 -%}
-  {%- if where_kind == "[" -%}
-    {%- assign first_where = item.where | first -%}
-    {%- assign more_where = item.where | slice: 1, 100 -%}
-  {%- else -%}
-    {%- assign first_where = item.where -%}
-    {%- assign more_where = "" | split: "," -%}
-  {%- endif -%}
   <li>
     <span class="key">{{ item.label | escape }}</span>
     <div class="what">
       {%- if item.what -%}
         <span class="what-main">{{ item.what | markdownify | remove: '<p>' | remove: '</p>' | strip }}</span>
       {%- endif -%}
-      {%- if first_where -%}
-        <span class="sep">&middot;</span>
-        {%- include rows-where.html where=first_where where_url=item.where_url -%}
-      {%- endif -%}
+      {%- comment -%} `where` is a list of venues: the first stays inline, every further one gets its own line {%- endcomment -%}
+      {%- for w in item.where -%}
+        {%- if forloop.first -%}
+          <span class="sep">&middot;</span>
+          {%- include rows-where.html where=w -%}
+        {%- endif -%}
+      {%- endfor -%}
       {%- for link in item.links -%}
         <span class="sep">&middot;</span>
         <span class="rep">[<a href="{{ link.url }}" target="_blank">{{ link.title | escape }}</a>]</span>
@@ -26,8 +20,10 @@
       {%- if item.note -%}
         <span class="muted note">({{ item.note | escape }})</span>
       {%- endif -%}
-      {%- for w in more_where -%}
-        <span class="where-more">{%- include rows-where.html where=w -%}</span>
+      {%- for w in item.where -%}
+        {%- unless forloop.first -%}
+          <span class="where-more">{%- include rows-where.html where=w -%}</span>
+        {%- endunless -%}
       {%- endfor -%}
       {%- if item.description -%}
         <div class="desc">{{ item.description | strip | markdownify }}</div>

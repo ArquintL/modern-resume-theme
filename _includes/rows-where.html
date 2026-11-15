@@ -1,8 +1,8 @@
-{% comment %} one venue of a `rows` entry: a string (optionally linked via include.where_url) or a {text, url} mapping {% endcomment %}
+{% comment %} one venue of a `rows` entry: a string or a {text, url} mapping {% endcomment %}
 {%- assign kind = include.where | jsonify | slice: 0 -%}
 {%- if kind == "{" -%}
   {%- assign text = include.where.text -%}{%- assign url = include.where.url -%}
 {%- else -%}
-  {%- assign text = include.where -%}{%- assign url = include.where_url -%}
+  {%- assign text = include.where -%}{%- assign url = nil -%}
 {%- endif -%}
 {%- if url -%}<a href="{{ url }}" target="_blank" class="muted">{{ text | escape }}</a>{%- else -%}<span class="muted">{{ text | escape }}</span>{%- endif -%}
